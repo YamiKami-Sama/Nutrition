@@ -52,7 +52,7 @@ public class NutrientManager {
 
         boolean change = false;
         for (Nutrient nutrient : NutrientList.get()) {
-            if (nutrition.get(nutrient) != nutritionValue) {
+            if (MathHelper.abs(nutrition.get(nutrient) - nutritionValue) > 0.01f) {
                 nutrition.put(nutrient, nutritionValue);
                 change = true;
             }
